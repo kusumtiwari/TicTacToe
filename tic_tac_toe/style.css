@@ -1,0 +1,142 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    list-style: none;
+}
+.container{
+    width: 100vw;
+    height : 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    height : 15vh;
+}
+.header h1{
+    font-size : clamp(1.6rem, 2.1vw, 2rem);
+}
+.gameboard{
+    height : 60vh;
+    background-color: lightpink;
+    width : 100vw;
+    text-align: center;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    width : min(55%, 55vw);
+    border: 4px solid black;
+}
+.gb-section{
+    font-size : clamp(2rem, 1.6vw, 3rem);
+    background-color: white;
+    margin: 0.2em;
+}
+.gb-section:hover{
+    background-color: black;
+    color : white;
+}
+.btn{
+    padding : 1.5em;
+    border : 3px solid black;
+    background-color: lightpink;
+    margin : 2em 0;
+    cursor : pointer;
+    font-size : clamp(0.8rem, 1.3vw, 1.2rem);
+}
+.btn:hover{
+    background: white;;
+}
+@media screen and (max-width : 760px)
+{
+  .btn{
+     padding : 1em 0.8em;
+  }
+  .gb-section{
+    height : 10vh;
+    width : 15vw;
+  }
+  .gameboard{
+    width: min(65%, 65vw);
+  }
+}
+.players{
+    width : 100vw;
+    background: linear-gradient(rgb(245, 220, 220), rgb(245, 193, 201), rgb(250, 185, 195),rgb(245, 220, 220) );
+    height : 35vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 0.5px lightpink;
+    position: fixed;
+    top : 40%;
+    display: none;
+}
+.players input{
+    font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+    margin-right: 1.5em;
+    color : black;
+}
+.start{
+    padding: 1em;
+    border-radius: 1em;
+    background-color: white;
+}
+.challenge{
+    background: linear-gradient(rgb(250, 230, 230), rgb(250, 201, 209), rgb(250, 200, 208), rgb(252, 227, 227));
+    animation-name : challenge;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    height : 10vh;
+    border : 3px solid black;
+    text-align: center;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    display : none;
+}
+@keyframes challenge{
+    0%{
+        width : 20vw;
+    }
+    60%
+    {
+        width : 60vw;
+    }
+    100%{
+        width : 100vw;
+    }
+}
+.opacity{
+    opacity: 0.1;
+}
+.turn-wise{
+    height : 10vh;
+    text-align: center;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    display: none;
+}
+.winner{
+    background: linear-gradient(rgb(250, 230, 230), rgb(250, 201, 209), rgb(250, 200, 208), rgb(252, 227, 227));
+    height : 15vh;
+    border : 3px solid black;
+    text-align: center;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    width : 60vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+.winner button{
+    margin : 1em;
+    padding: 0.5em;
+}
+.winner h1{
+    margin: 0.5em 0;
+}
+.winner a{
+    color : black;
+}
